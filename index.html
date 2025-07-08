@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>全球国家风险查询</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 2rem;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      width: calc(100% - 40px);
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .suggestions {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .result {
+      margin-top: 2rem;
+      padding: 1rem;
+      border-top: 1px solid #ccc;
+    }
+    .result span {
+      display: block;
+      margin: 0.5rem 0;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #0077cc;
+    }
+    .emoji {
+      font-size: 1.2rem;
+      margin-right: 0.3rem;
+    }
+    .suggestion-item {
+      cursor: pointer;
+      color: #0077cc;
+      margin-right: 0.5rem;
+      display: inline-block;
+      margin-bottom: 0.3rem;
+    }
+    .suggestion-item:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <label for="country">请输入国家名称：</label>
+    <div style="display: flex; align-items: center;">
+      <input type="text" id="country" oninput="handleInput(this.value)" placeholder="例如：chi, ira, ven...">
+      <span style="margin-left: 10px; font-size: 1.2rem;">🔍</span>
+    </div>
+    <div class="suggestions" id="suggestions">加载中...</div>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    let data = [];
+    let nameToEntry = new Map();
+
+    fetch('./data.json')
+      .then(res => res.json())
+      .then(json => {
+        data = json;
+        nameToEntry.clear();
+        data.forEach(entry => {
+          nameToEntry.set(entry.name.toLowerCase(), entry);
+        });
+        showSuggestions('');
+      });
+
+    function handleInput(inputVal) {
+      const val = inputVal.toLowerCase().trim();
+      showSuggestions(val);
+    }
+
+    function showSuggestions(filter) {
+      const sugg = document.getElementById('suggestions');
+      const matches = data
+        .filter(entry => entry.name.toLowerCase().includes(filter))
+        .map(entry => entry.name);
+
+      if (matches.length === 0) {
+        sugg.innerHTML = '未找到匹配项';
+        return;
+      }
+
+      sugg.innerHTML = '建议：' + matches.map(name =>
+        `<span class="suggestion-item" onclick="selectCountry('${name}')">${name}</span>`
+      ).join('');
+    }
+
+    function selectCountry(name) {
+      document.getElementById('country').value = name;
+      const entry = nameToEntry.get(name.toLowerCase());
+      if (entry) {
+        displayCountry(entry);
+      }
+    }
+
+    function displayCountry(info) {
+      const r = document.getElementById('result');
+      r.innerHTML = `
+        <span><span class="emoji">🌍</span>国家：<span class="highlight">${info.name}</span></span>
+        <span><span class="emoji">⚠️</span>风险等级：<span class="highlight">${info.risk_level}/10</span></span>
+        <span><span class="emoji">🔖</span>标签：${info.tags.join('、')}</span>
+        <span><span class="emoji">📌</span>建议：<span class="highlight">${info.business_advice}</span></span>
+        <span><span class="emoji">📝</span>简要说明：${info.summary}</span>
+      `;
+    }
+  </script>
+</body>
+</html>
