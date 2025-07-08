@@ -2,8 +2,8 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>全球国家风险查询</title>
-  <link rel="icon" href="🌍" />
+  <title>全球国家风险评级数据库 | Country Risk Index</title>
+  <link rel="icon" href="https://fav.farm/🌍" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -65,7 +65,7 @@
 </head>
 <body>
   <div class="container">
-    <h2>🌐 全球国家风险评级查询</h2>
+    <h2>🌐 全球国家风险评级数据库 | Country Risk Index</h2>
     <label for="country">请输入国家英文名称：</label>
     <input type="text" id="country" placeholder="如 china / afghanistan...">
     <div class="suggestions" id="suggestions">🔄 正在加载数据...</div>
@@ -124,30 +124,32 @@
     };
 
     const simulateStreaming = (info) => {
-      const r = document.getElementById('result');
-      r.innerHTML = '';
-      const lines = [
-        `🌍 国家：${info.name}`,
-        `🆔 国家代码：${info.code}`,
-        `⚠️ 风险等级：${info.risk_level}/10`,
-        `🔖 标签：${info.tags.join('、')}`,
-        `📌 风险理由：${info.reason}`,
-        `📚 知名案例：${info.notorious_cases}`,
-        `🧳 旅游建议：${info.travel_advice}`,
-        `💼 商业建议：${info.business_advice}`,
-        `📝 总结：${info.summary}`
-      ];
+  const r = document.getElementById('result');
+  r.innerHTML = '';
+  const lines = [
+    `🌍 国家：${info.name}`,
+    `🆔 国家代码：${info.code}`,
+    `⚠️ 风险等级：${info.risk_level}/10`,
+    `🔖 标签：${info.tags.join('、')}`,
+    `📌 风险理由：${info.reason}`,
+    `📚 知名案例：${info.notorious_cases}`,
+    `🧳 旅游建议：${info.travel_advice}`,
+    `💼 商业建议：${info.business_advice}`,
+    `📝 总结：${info.summary}`,
+    `📅 数据更新时间：${info.last_updated || '未知'}`
+  ];
 
-      let i = 0;
-      const printLine = () => {
-        if (i < lines.length) {
-          r.innerHTML += lines[i] + '\n';
-          i++;
-          setTimeout(printLine, 120); // 模拟流式打印
-        }
-      };
-      printLine();
-    };
+  let i = 0;
+  const printLine = () => {
+    if (i < lines.length) {
+      r.innerHTML += lines[i] + '\n';
+      i++;
+      setTimeout(printLine, 120);
+    }
+  };
+  printLine();
+};
+
   </script>
 </body>
 </html>
