@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>全球国家风险查询</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .suggestions {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .result {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+      white-space: pre-line;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .suggestions span {
+      cursor: pointer;
+      color: #007acc;
+      margin-right: 8px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #007acc;
+    }
+
+    .emoji {
+      font-size: 1.2rem;
+      margin-right: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🌐 全球国家风险评级查询</h2>
+    <label for="country">请输入国家英文名称：</label>
+    <input type="text" id="country" placeholder="如 china / afghanistan...">
+    <div class="suggestions" id="suggestions">🔄 正在加载数据...</div>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    let data = {};
+    let allCountries = [];
+
+    fetch('./data.json')
+      .then(res => res.json())
+      .then(json => {
+        data = {};
+        allCountries = json.map(entry => entry.name);
+        json.forEach(entry => {
+          data[entry.name.toLowerCase()] = entry;
+        });
+        document.getElementById('suggestions').innerHTML = '✅ 数据加载完毕，请输入国家并按 Enter 查询';
+      })
+      .catch(() => {
+        document.getElementById('suggestions').innerHTML = '❌ 加载失败，请检查 data.json';
+      });
+
+    const inputField = document.getElementById('country');
+    inputField.addEventListener('input', () => {
+      const val = inputField.value.trim().toLowerCase();
+      const sugg = document.getElementById('suggestions');
+      const result = document.getElementById('result');
+      result.innerHTML = '';
+      if (!val) {
+        sugg.innerHTML = '请输入国家名称，例如 china、iran、russia...';
+        return;
+      }
+
+      const matches = allCountries.filter(c => c.toLowerCase().includes(val));
+      if (matches.length > 0) {
+        sugg.innerHTML = '建议：' + matches.map(m => `<span onclick="fillCountry('${m}')">${m}</span>`).join('、');
+      } else {
+        sugg.innerHTML = '未找到匹配项';
+      }
+    });
+
+    inputField.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const val = inputField.value.trim().toLowerCase();
+        const match = data[val] || data[allCountries.find(c => c.toLowerCase() === val)];
+        if (match) simulateStreaming(match);
+        else document.getElementById('result').innerHTML = '❌ 未找到该国家，请检查拼写';
+      }
+    });
+
+    const fillCountry = (name) => {
+      document.getElementById('country').value = name;
+      document.getElementById('suggestions').innerHTML = '';
+    };
+
+    const simulateStreaming = (info) => {
+      const r = document.getElementById('result');
+      r.innerHTML = '';
+      const lines = [
+        `🌍 国家：${info.name}`,
+        `🆔 国家代码：${info.code}`,
+        `⚠️ 风险等级：${info.risk_level}/10`,
+        `🔖 标签：${info.tags.join('、')}`,
+        `📌 风险理由：${info.reason}`,
+        `📚 知名案例：${info.notorious_cases}`,
+        `🧳 旅游建议：${info.travel_advice}`,
+        `💼 商业建议：${info.business_advice}`,
+        `📝 总结：${info.summary}`
+      ];
+
+      let i = 0;
+      const printLine = () => {
+        if (i < lines.length) {
+          r.innerHTML += lines[i] + '\n';
+          i++;
+          setTimeout(printLine, 120); // 延迟输出模拟流式
+        }
+      };
+      printLine();
+    };
+  </script>
+</body>
+</html>
