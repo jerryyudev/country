@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>全球国家风险查询</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .suggestions {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .result {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+      white-space: pre-line;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .suggestions span {
+      cursor: pointer;
+      color: #007acc;
+      margin-right: 8px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #007acc;
+    }
+
+    .emoji {
+      font-size: 1.2rem;
+      margin-right: 0.3rem;
+    }
+
+    .loading {
+      color: gray;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🌐 全球国家风险评级查询</h2>
+    <label for="country">请输入国家英文名称或拼音（如 china / afghanistan）：</label>
+    <input type="text" id="country" oninput="handleInput(this.value)" placeholder="请输入国家名称...">
+    <div class="suggestions" id="suggestions">🔄 加载中，请稍候...</div>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    let data = {};
+    let allCountries = [];
+
+    // 加载 data.json 文件
+    fetch('./data.json')
+      .then(res => res.json())
+      .then(json => {
+        data = {};
+        allCountries = json.map(entry => entry.name);
+        json.forEach(entry => {
+          data[entry.name.toLowerCase()] = entry;
+        });
+        document.getElementById('suggestions').innerHTML = '✅ 数据加载完毕，请开始输入国家名称';
+      })
+      .catch(err => {
+        document.getElementById('suggestions').innerHTML = '❌ 加载失败，请检查 data.json 是否存在';
+      });
+
+    const handleInput = (val) => {
+      const result = document.getElementById('result');
+      const sugg = document.getElementById('suggestions');
+      result.innerHTML = '';
+      if (!val.trim()) {
+        sugg.innerHTML = '请输入国家名称，例如 china、iran、russia...';
+        return;
+      }
+
+      const input = val.toLowerCase();
+      const matches = allCountries.filter(c => c.toLowerCase().includes(input));
+      if (matches.length > 0) {
+        sugg.innerHTML = '建议：' + matches.map(match => `<span onclick="fillCountry('${match}')">${match}</span>`).join('、');
+      } else {
+        sugg.innerHTML = '未找到匹配项';
+      }
+
+      // 自动展示匹配内容
+      const bestMatch = data[input] || data[matches[0]?.toLowerCase()];
+      if (bestMatch) simulateStreaming(bestMatch);
+    };
+
+    const fillCountry = (name) => {
+      document.getElementById('country').value = name;
+      handleInput(name);
+    };
+
+    const simulateStreaming = (info) => {
+      const r = document.getElementById('result');
+      r.innerHTML = '';
+      const lines = [
+        `🌍 国家：${info.name}`,
+        `🆔 国家代码：${info.code}`,
+        `⚠️ 风险等级：${info.risk_level}/10`,
+        `🔖 标签：${info.tags.join('、')}`,
+        `📌 风险理由：${info.reason}`,
+        `📚 知名案例：${info.notorious_cases}`,
+        `🧳 旅游建议：${info.travel_advice}`,
+        `💼 商业建议：${info.business_advice}`,
+        `📝 总结：${info.summary}`
+      ];
+
+      let i = 0;
+      const printLine = () => {
+        if (i < lines.length) {
+          r.innerHTML += lines[i] + '\n';
+          i++;
+          setTimeout(printLine, 120); // 流式延迟
+        }
+      };
+      printLine();
+    };
+  </script>
+</body>
+</html>
