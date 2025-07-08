@@ -119,8 +119,8 @@
     "travel_advice": "避开冲突区域，保持警惕。",
     "business_advice": "投资环境有限，需考虑政治风险。",
     "summary": "阿塞拜疆存在地区安全问题，需谨慎。"
-  }
-    {
+  },
+  {
     "name": "Bahamas",
     "code": "BS",
     "risk_level": 2,
@@ -174,8 +174,8 @@
     "travel_advice": "普通旅游相对安全，但敏感政治活动风险高，避免公开表达政治观点。",
     "business_advice": "经济受限，制裁影响逐渐显现，合规风险大，资金转移受限。",
     "summary": "白俄罗斯为独裁国家，存在政治与经济双重风险，建议审慎评估商业机会。"
-  }
-    {
+  },
+  {
     "name": "Belgium",
     "code": "BE",
     "risk_level": 1,
@@ -229,8 +229,8 @@
     "travel_advice": "避免参与示威活动，注意安全。",
     "business_advice": "投资环境不稳，需考虑社会风险。",
     "summary": "玻利维亚政治社会不稳定，旅游和投资需谨慎。"
-  }
-    {
+  }.
+  {
     "name": "Bosnia and Herzegovina",
     "code": "BA",
     "risk_level": 5,
@@ -284,8 +284,8 @@
     "travel_advice": "旅游安全，注意财物安全。",
     "business_advice": "投资环境一般，需关注反腐措施。",
     "summary": "保加利亚适合旅游和谨慎投资。"
-  }
-    {
+  },
+  {
     "name": "Burkina Faso",
     "code": "BF",
     "risk_level": 8,
@@ -339,8 +339,8 @@
     "travel_advice": "避免冲突地区，注意安全。",
     "business_advice": "投资环境不稳，风险较高。",
     "summary": "喀麦隆存在较严重的安全和政治风险。"
-  }
-    {
+  },
+  {
     "name": "Canada",
     "code": "CA",
     "risk_level": 1,
@@ -394,8 +394,8 @@
     "travel_advice": "旅游基本安全，避免政治敏感话题和活动。",
     "business_advice": "投资需谨慎，注意政策风险和合规要求。",
     "summary": "中国政治高压，社会管控严格，商业和旅游环境风险中高。"
-  }
-    {
+  },
+  {
     "name": "Colombia",
     "code": "CO",
     "risk_level": 7,
@@ -449,8 +449,8 @@
     "travel_advice": "旅游安全，适合生态旅游。",
     "business_advice": "投资环境良好，风险低。",
     "summary": "哥斯达黎加为中美洲较稳定国家，适合旅游和投资。"
-  }
-    {
+  },
+  {
     "name": "Croatia",
     "code": "HR",
     "risk_level": 2,
@@ -493,8 +493,8 @@
     "travel_advice": "旅游安全，适合文化旅游。",
     "business_advice": "商业环境成熟，投资安全。",
     "summary": "捷克为中欧稳定国家，风险极低，适合旅游和商业。"
-  }
-    {
+  },
+  {
     "name": "Denmark",
     "code": "DK",
     "risk_level": 1,
@@ -548,8 +548,8 @@
     "travel_advice": "避免夜间出行，注意保护贵重物品。",
     "business_advice": "投资环境尚可，但政治不确定性和治安风险需考量。",
     "summary": "厄瓜多尔具发展潜力但安全风险不容忽视，需谨慎规划。"
-  }
-    {
+  },
+  {
     "name": "Egypt",
     "code": "EG",
     "risk_level": 7,
@@ -603,8 +603,8 @@
     "travel_advice": "适合自由行和商务出行，治安良好。",
     "business_advice": "极具创新优势，政府支持创业投资。",
     "summary": "爱沙尼亚是数字化领先国家，适合旅游与科技类商业发展。"
-  }
-    {
+  },
+  {
     "name": "Eswatini",
     "code": "SZ",
     "risk_level": 6,
@@ -658,8 +658,8 @@
     "travel_advice": "旅游基本安全，避免参与示威活动与深夜外出。",
     "business_advice": "商业环境成熟，劳工政策较严格。",
     "summary": "法国是欧盟核心国家，政治成熟但社会抗议需关注。"
-  }
-    {
+  },
+  {
     "name": "Gabon",
     "code": "GA",
     "risk_level": 6,
@@ -713,8 +713,8 @@
     "travel_advice": "旅游时避免暴露财物与个人信息，警惕诈骗电话与网络钓鱼。",
     "business_advice": "对外资友好，但需设立法律顾问防范合同风险。",
     "summary": "加纳在西非相对稳定，具备发展潜力但需防范经济诈骗与贪腐风险。"
-  }
-    {
+  },
+  {
     "name": "Greece",
     "code": "GR",
     "risk_level": 2,
@@ -768,8 +768,8 @@
     "travel_advice": "安全风险高，旅游基础设施差，建议避免前往。",
     "business_advice": "基本不具备投资条件，法律缺乏保障。",
     "summary": "几内亚比绍为严重不稳定国家，政经环境极差，不适合旅游或经商。"
-  }
-    {
+  },
+  {
     "name": "Guyana",
     "code": "GY",
     "risk_level": 5,
@@ -823,8 +823,8 @@
     "travel_advice": "非常适合独行、家庭、探险等多种旅行类型。",
     "business_advice": "法律环境稳定，创新型企业支持度高。",
     "summary": "冰岛安全性极高，适合所有出行及绿色科技类商业项目。"
-  }
-    {
+  },
+  {
     "name": "India",
     "code": "IN",
     "risk_level": 6,
@@ -878,8 +878,8 @@
     "travel_advice": "极度安全，适合旅游、工作与留学。",
     "business_advice": "商业友好，企业税率低，科技与金融领域发展强劲。",
     "summary": "爱尔兰为投资、创业与出行的理想目的地，法律透明且营商环境优越。"
-  }
-    {
+  },
+  {
     "name": "Israel",
     "code": "IL",
     "risk_level": 7,
@@ -933,8 +933,8 @@
     "travel_advice": "极度安全，适合所有形式旅行，留意灾害预警系统。",
     "business_advice": "法律透明，市场稳定，技术密集型投资环境良好。",
     "summary": "日本为东亚最安全与发达国家之一，适合旅行与多行业投资。"
-  }
-    {
+  },
+  {
     "name": "Jordan",
     "code": "JO",
     "risk_level": 5,
@@ -988,8 +988,8 @@
     "travel_advice": "适合短期商务与高端旅行，女性需注意文化规范。",
     "business_advice": "石油行业发达，商业机会有限于高端领域。",
     "summary": "科威特稳定富裕但保守，适合特定行业投资与高端往来。"
-  }
-    {
+  },
+  {
     "name": "Kyrgyzstan",
     "code": "KG",
     "risk_level": 5,
@@ -1043,8 +1043,8 @@
     "travel_advice": "日间出行相对安全，夜间避免单独外出。",
     "business_advice": "资源有限，适合小规模农业与生态旅游发展。",
     "summary": "莱索托是地理独特但资源受限的国家，适合低密度开发，不宜大规模投资。"
-  }
-    {
+  },
+  {
     "name": "Liberia",
     "code": "LR",
     "risk_level": 6,
@@ -1098,8 +1098,8 @@
     "travel_advice": "完全安全，适合旅游、工作与定居。",
     "business_advice": "为全球金融与总部设立重地，营商环境高度友好。",
     "summary": "卢森堡是欧洲商业、金融与居住环境最优质国家之一。"
-  }
-    {
+  },
+  {
     "name": "Madagascar",
     "code": "MG",
     "risk_level": 5,
@@ -1153,8 +1153,8 @@
     "travel_advice": "强烈不建议前往，尤其是北部与冲突频发区。",
     "business_advice": "所有商业活动面临极高安全与合规风险，不建议开展业务。",
     "summary": "马里政局崩溃，武装活跃，是西非最危险国家之一。"
-  }
-    {
+  },
+  {
     "name": "Malta",
     "code": "MT",
     "risk_level": 2,
@@ -1208,8 +1208,8 @@
     "travel_advice": "旅游区可控但不宜夜行，避免前往西北部与边境城市。",
     "business_advice": "制造业与自由贸易区具吸引力，但需高度安全管控与本地合作。",
     "summary": "墨西哥经济潜力大但暴力猖獗，是典型高收益高风险市场。"
-  }
-    {
+  },
+  {
     "name": "Micronesia",
     "code": "FM",
     "risk_level": 2,
@@ -1263,8 +1263,8 @@
     "travel_advice": "一般安全，注意政治集会与夜间街头治安。",
     "business_advice": "旅游业与房地产潜力巨大，入欧谈判中带来政策机遇。",
     "summary": "黑山为新兴欧盟候选国之一，适合涉足基础设施与旅游地产项目。"
-  }
-    {
+  },
+  {
     "name": "Morocco",
     "code": "MA",
     "risk_level": 4,
@@ -1318,8 +1318,8 @@
     "travel_advice": "旅游资源有限，建议短期逗留并注意健康保障。",
     "business_advice": "基本无本地市场，外资项目需完全依赖政府安排与支持。",
     "summary": "瑙鲁财政依赖外援，投资与生活条件差，仅适合特殊项目合作。"
-  }
-    {
+  },
+  {
     "name": "Nepal",
     "code": "NP",
     "risk_level": 4,
@@ -1373,8 +1373,8 @@
     "travel_advice": "不建议前往，特别是边境地区，存在被袭或被绑架高风险。",
     "business_advice": "能源资源丰富但局势不稳，合同与资产保护无保障。",
     "summary": "尼日尔政治、治安、恐怖主义多重风险并存，极不适合投资或旅游。"
-  }
-    {
+  },
+  {
     "name": "Nigeria",
     "code": "NG",
     "risk_level": 9,
@@ -1428,8 +1428,8 @@
     "travel_advice": "避开俾路支、开伯尔等高风险地区，旅游需结伴并报告行踪。",
     "business_advice": "与中资项目较多合作，但合规性与安全需高度关注，风险不可低估。",
     "summary": "巴基斯坦复杂局势下存在有限机会，需防恐袭、绑架与政策突变风险。"
-  }
-    {
+  },
+  {
     "name": "Palau",
     "code": "PW",
     "risk_level": 2,
@@ -1483,8 +1483,8 @@
     "travel_advice": "首都相对安全，边境地区需警惕武装冲突与走私集团。",
     "business_advice": "农业与水电发展潜力大，需控制法律与政策不确定性。",
     "summary": "巴拉圭为资源型国家，适合农业投资但需应对腐败与走私风险。"
-  }
-    {
+  },
+  {
     "name": "Peru",
     "code": "PE",
     "risk_level": 5,
@@ -1538,8 +1538,8 @@
     "travel_advice": "主城区旅游安全，避免谈论王室、宗教等敏感话题。",
     "business_advice": "天然气与建筑行业具潜力，需了解本地法律与合同执行文化。",
     "summary": "卡塔尔为中东较安全国家之一，商业机会大但言论与劳工议题需慎重处理。"
-  }
-    {
+  },
+  {
     "name": "Republic of Korea",
     "code": "KR",
     "risk_level": 2,
@@ -1593,8 +1593,8 @@
     "travel_advice": "首都安全良好，注意边境安全；尊重官方表述，勿触及大屠杀敏感议题。",
     "business_advice": "适合ICT与农业投资，需理解政府主导型经济机制。",
     "summary": "卢旺达治安好于周边，但政治言论受限，对敏感事务需高度谨慎。"
-  }
-   {
+  },
+  {
     "name": "Saint Kitts and Nevis",
     "code": "KN",
     "risk_level": 2,
@@ -1637,8 +1637,8 @@
     "travel_advice": "旅游友好，注意医疗和交通条件有限。",
     "business_advice": "适合农业与绿色能源试点项目，规模小但政府友好。",
     "summary": "萨摩亚安全稳定，适合低强度、可持续性商业合作。"
-    },
-    {
+  },
+  {
     "name": "San Marino",
     "code": "SM",
     "risk_level": 1,
@@ -1692,8 +1692,8 @@
     "travel_advice": "主要城市安全，避免政治集会与边境敏感地区。",
     "business_advice": "中资参与基础设施建设频繁，法律体系逐步现代化，需防范突发政策风险。",
     "summary": "塞尔维亚为欧盟候选国，存在发展机遇，但与邻国矛盾与政治情绪需留意。"
-  }
-    {
+  },
+  {
     "name": "Seychelles",
     "code": "SC",
     "risk_level": 2,
@@ -1747,8 +1747,8 @@
     "travel_advice": "非常安全，适合各种形式旅游。",
     "business_advice": "物流、环保、高科技产业适宜发展。",
     "summary": "斯洛文尼亚为低风险投资环境，社会稳定、基础设施现代化。"
-  }
-    {
+  },
+  {
     "name": "Solomon Islands",
     "code": "SB",
     "risk_level": 4,
@@ -1802,8 +1802,8 @@
     "travel_advice": "常规旅游安全，避免在政治活动区域过多逗留。",
     "business_advice": "房地产、旅游、绿色能源项目具吸引力，经济政策稳定。",
     "summary": "西班牙为低风险国家，政治分歧影响可控，适合各类长期投资项目。"
-  }
-    {
+  },
+  {
     "name": "Sri Lanka",
     "code": "LK",
     "risk_level": 5,
@@ -1857,8 +1857,8 @@
     "travel_advice": "非常安全，适合旅游与学习。",
     "business_advice": "高度法治，创新氛围良好，适合科技、可持续项目投资。",
     "summary": "瑞典为极低风险国家，是商业与个人出行的优质目的地。"
-  }
-    {
+  },
+  {
     "name": "Switzerland",
     "code": "CH",
     "risk_level": 1,
@@ -1912,8 +1912,8 @@
     "travel_advice": "旅游资源丰富，城市区域治安良好，需避免政治集会区域。",
     "business_advice": "外资企业需理解本地法律与文化禁忌，适合制造与物流等产业布局。",
     "summary": "泰国经济活跃但政治风险存在，适合民生类投资但需规避政治敏感问题。"
-  }
-    {
+  },
+  {
     "name": "Timor-Leste",
     "code": "TL",
     "risk_level": 5,
@@ -1967,8 +1967,8 @@
     "travel_advice": "避免边境与人群密集场所，旅游应选择官方认证行程。",
     "business_advice": "适合轻工业与农业项目，政治干扰风险需防范。",
     "summary": "突尼斯处于民主过渡期，社会结构复杂，商业项目需审慎选择。"
-  }
-    {
+  },
+  {
     "name": "Turkey",
     "code": "TR",
     "risk_level": 5,
@@ -2022,8 +2022,8 @@
     "travel_advice": "强烈不建议前往，战争区域不可预测，首都亦面临导弹袭击风险。",
     "business_advice": "金融系统不稳定，营商环境动荡，仅适合人道援助与战后重建规划。",
     "summary": "乌克兰正处全面战争中，政治风险与军事风险极高，不适合当前投资或出行。"
-  }
-    {
+  },
+  {
     "name": "United Arab Emirates",
     "code": "AE",
     "risk_level": 2,
@@ -2077,8 +2077,8 @@
     "travel_advice": "总体安全，注意与宗教或政治相关话题。",
     "business_advice": "资源丰富，适合能源、农业与基础建设项目，政策方向受政府主导影响大。",
     "summary": "乌兹别克开放初期，市场潜力大但制度透明度有限，适合稳健型布局。"
-  }
-    {
+  },
+  {
     "name": "Vanuatu",
     "code": "VU",
     "risk_level": 3,
@@ -2132,8 +2132,8 @@
     "travel_advice": "全面禁止前往，极高风险地区。",
     "business_advice": "政治真空、合同无效、资金无法进出，完全不具备商业开发条件。",
     "summary": "也门局势动荡，是全球最不稳定国家之一。请勿旅行、勿投资。"
-  }
-    {
+  },
+  {
     "name": "Zambia",
     "code": "ZM",
     "risk_level": 3,
